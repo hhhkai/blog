@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>内容页</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+</head>
+<body>
+	<div class="wrap">
+		<div class="top">
+			<div class="nav">
+				<div class="logo"><a href="index.html">胡凯博客</a></div>
+				<div class="nav-list">
+					<ul>
+						<li><a href="#">关于</a></li>
+						<li><a href="#">分类</a></li>
+					</ul>
+				</div>
+				<div class="search">
+					<input type="text" value="搜索"></input>
+				</div>
+			</div>
+		</div><!--nav结束-->
+		<div class="main">
+			<div class="main-left">
+				<div class="main-contents">
+					<div class="main-content">
+						<div class="con-tit">
+							<a href="#">网页设计师必用的11个SEO技巧</a>
+						</div><!--con-tit结束-->
+						<div class="con-lit">
+							<ul>
+								<li>20/02/2016</li>
+								<li><a href="#">技巧理论</a></li>
+							</ul>
+						</div><!--con-lit结束-->
+						<div class="con-page" id="con-page">
+							现在的网页设计师不仅设计网页的外观和风格。他们也常常负责主要前端代码的编写。换句话说，SEO（搜索引擎优化）的相当一部分责任落在设计师的肩上。然而大量网页设计师对这个领域的熟悉程度仍不足以让他们写出一个对搜索引擎充分优化的网页。
+
+本文旨在为普通，甚至部分高级网页设计师提高SEO技巧提供一些重要的窍门。
+
+1. 让代码比设计更美
+
+搭建网页前端的时候，使用有语义的代码。用描述性的标签组织页面结构，可以提高内容对搜索引擎的可读性。这也会让修饰页面的工作变得更简单干净。
+
+2. 使用关键字，但要把握分寸
+
+关键字是指描述主要内容的词语。有策略地在页面中安放关键字是很重要的，例如在URL、标题标签（title tag）以及主要的抬头标签（heading tag）中。在正文中经常使用关键字也很重要，但是不能过度，否则你的文章可能因关键字堆砌遭到惩罚。
+
+3. 避免使用Flash作导航栏
+
+无论华丽的下拉列表效果如何诱人，不要使用它。搜索引擎不能顺利读取Flash文件中的内容，所以Flash导航栏中的链接将无法被跟踪。
+
+4. 使用不同的页面标题
+
+你的网站的每个页面都应该有标题属性，而每个页面的标题应该各不相同。如果每个页面的标题都一样的话，搜索引擎会理解为你的网站的每个页面都是相同的主题。
+
+5. 不要忘记图片
+
+好好利用图片的alt属性，合理地描述它。搜索引擎再怎么聪明，它们也看不懂图片。忽略这点会让你损失大量图片搜索的流量。
+
+6. 不要使用通用链接
+
+搜索引擎非常重视链接。所以当链接到相关内容时，请使用能确切描述该内容的文字。比如，当你为浏览者提供更多Photoshop信息的链接时，使用诸如“关于Photoshop的更多信息”的描述，而不只是“更多信息”。
+
+7. 忌用图片代替文字
+
+作为设计师，我们总是希望作品越美观越好。于是有时我们会用一张漂亮的图片替换掉浏览器上难看的标题文字。请尽量避免这样做。我前面说过，搜索引擎不能理解图片的内容，而这里应该是你写关键字的地方。
+
+作者注：这一点我貌似误导大家了。事实上我们有办法用图片达到目的，比如FIR。
+
+8. 慎用AJAX
+
+Ajax加强用户体验的效果很赞，但是请不要过度使用。Ajax生成的内容无法被链接到。一个不错的经验法则是：如果你用Ajax加载的可能是一个独立页面，就尽量不要使用它。
+
+9. 尽快被收录
+
+让网页尽快被搜索引擎收录的方法之一是，尝试搞到高人气的相关利基网站的内链。提交给谷歌也是一个选择，不过这有时会花好几天时间，运气不好的话几个星期也有可能。
+
+10. 争取内链
+
+内链的数量和质量对网站在搜索结果中的位置有很大影响。让大伙链接到你的网站的一个好办法是提供高质量和原创的内容。另一个办法是大方为别人的网站提供链接。
+
+11. 坚持同样的URL
+
+你要创建网站时，请从一开始就决定好是否要使用“www”。一旦决定好了就不要再改。搜索引擎会把www.enqoo.com和enqoo.com看作两个不同的重复的网站，而搜索引擎不喜欢重复的网站。						</div><!--con-page结束-->
+					</div><!--main-content结束-->
+				</div><!--main-contents结束-->
+			</div><!--main-left结束-->
+			<div class="main-right"></div>
+		</div>
+		<div class="foot">Copyright&copy;hu</div>
+	</div><!--wrap结束-->
+	<script type="text/javascript">
+	window.onload = function(){
+		var art_box = document.getElementById("con-page");
+		var art = art_box.textContent;
+		var art_sp = new Array();
+		art_sp = art.split("。");
+		art_box.innerHTML = "";
+		for(i=0;i<art_sp.length-1;i++){
+			var resultStr = art_sp[i]+"。";
+			var con_page = document.createElement("p");
+			con_page.innerHTML = resultStr;
+			art_box.appendChild(con_page);
+ 		} 
+ 	}	
+	</script>
+</body>
+</html>

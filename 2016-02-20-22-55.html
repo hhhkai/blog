@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>内容页</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+</head>
+<body>
+	<div class="wrap">
+		<div class="top">
+			<div class="nav">
+				<div class="logo"><a href="index.html">胡凯博客</a></div>
+				<div class="nav-list">
+					<ul>
+						<li><a href="#">关于</a></li>
+						<li><a href="#">分类</a></li>
+					</ul>
+				</div>
+				<div class="search">
+					<input type="text" value="搜索"></input>
+				</div>
+			</div>
+		</div><!--nav结束-->
+		<div class="main">
+			<div class="main-left">
+				<div class="main-contents">
+					<div class="main-content">
+						<div class="con-tit">
+							<a href="#">DIV+CSS常见的9个错误</a>
+						</div><!--con-tit结束-->
+						<div class="con-lit">
+							<ul>
+								<li>20/02/2016</li>
+								<li><a href="#">技巧理论</a></li>
+							</ul>
+						</div><!--con-lit结束-->
+						<div class="con-page" id="con-page">
+							1. 检查HTML元素是否有拼写错误、是否忘记结束标记
+
+即使是老手也经常会弄错div的嵌套关系。可以用dreamweaver的验证功能检查一下有无错误。
+
+2. 检查CSS是否正确
+
+检查一下有无拼写错误、是否忘记结尾的 } 等。可以利用CleanCSS来检查 CSS的拼写错误。CleanCSS本是为CSS减肥的工具，但也能检查出拼写错误。
+
+3. 确定错误发生的位置
+
+假如错误影响了整体布局，则可以逐个删除div块，直到删除某个div块后显示恢复正常，即可确定错误发生的位置。
+
+4. 利用border属性确定出错元素的布局特性
+
+使用float属性布局一不小心就会出错。这时为元素添加border属性确定元素边界，错误原因即水落石出。
+
+5. float元素的父元素不能指定clear属性
+
+MacIE下假如对float的元素的父元素使用clear属性，四周的float元素布局就会混乱。这是MacIE的闻名的bug，倘若不知道就会走弯路。
+
+6. float元素务必指定width属性
+
+很多浏览器在显示未指定width的float元素时会有bug。所以不管float元素的内容如何，一定要为其指定width属性。
+
+另外指定元素时尽量使用em而不是px做单位。
+
+7. float元素不能指定margin和padding等属性
+
+IE在显示指定了margin和padding的float元素时有bug。因此不要对float元素指定margin和padding属性（可以在float元素内部嵌套一个div来设置margin和padding）。也可以使用hack方法为IE指定非凡的值。
+
+8. float元素的宽度之和要小于100%
+
+假如float元素的宽度之和正好是100%，某些古老的浏览器将不能正常显示。因此请保证宽度之和小于99%。
+
+9. 是否重设了默认的样式？
+
+某些属性如margin、padding等，不同浏览器会有不同的解释。因此最好在开发前首先将全体的margin、padding设置为0、列表样式设置为none等。
+
+10. 是否忘记了写DTD？
+
+假如无论怎样调整不同浏览器显示结果还是不一样，那么可以检查一下页面开头是不是忘了写下面这行DTD：
+
+＜!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01 Transitional//EN” “http://www.w3.org						</div><!--con-page结束-->
+					</div><!--main-content结束-->
+				</div><!--main-contents结束-->
+			</div><!--main-left结束-->
+			<div class="main-right"></div>
+		</div>
+		<div class="foot">Copyright&copy;hu</div>
+	</div><!--wrap结束-->
+	<script type="text/javascript">
+	window.onload = function(){
+		var art_box = document.getElementById("con-page");
+		var art = art_box.textContent;
+		var art_sp = new Array();
+		art_sp = art.split("。");
+		art_box.innerHTML = "";
+		for(i=0;i<art_sp.length-1;i++){
+			var resultStr = art_sp[i]+"。";
+			var con_page = document.createElement("p");
+			con_page.innerHTML = resultStr;
+			art_box.appendChild(con_page);
+ 		} 
+ 	}	
+	</script>
+</body>
+</html>

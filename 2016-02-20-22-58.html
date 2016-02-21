@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>内容页</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+</head>
+<body>
+	<div class="wrap">
+		<div class="top">
+			<div class="nav">
+				<div class="logo"><a href="index.html">胡凯博客</a></div>
+				<div class="nav-list">
+					<ul>
+						<li><a href="#">关于</a></li>
+						<li><a href="#">分类</a></li>
+					</ul>
+				</div>
+				<div class="search">
+					<input type="text" value="搜索"></input>
+				</div>
+			</div>
+		</div><!--nav结束-->
+		<div class="main">
+			<div class="main-left">
+				<div class="main-contents">
+					<div class="main-content">
+						<div class="con-tit">
+							<a href="#">SEO搜索优化从div+css命名开始</a>
+						</div><!--con-tit结束-->
+						<div class="con-lit">
+							<ul>
+								<li>20/02/2016</li>
+								<li><a href="#">技巧理论</a></li>
+							</ul>
+						</div><!--con-lit结束-->
+						<div class="con-page" id="con-page">
+							要知道，搜索引擎可都是通过抓取你的网站源代码来进行亲密接触的，那么，如何才能更好地让搜索引擎的爬虫更快更准确地觉察到你的内容相关性，增强网站的搜索优化呢？可能从最基本的DIV+CSS的命名规则入手会有意想不到的收获，最基础的就是最有效的。
+
+下面从前端设计的角度整理的DIV+CSS的命名规则，就很好地考虑到了搜索引擎的喜好，在页面设计的过程中，尽量做你懂，搜索引擎也懂，何乐而不为呢。
+
+页头：header
+
+登录条：loginBar
+
+标志：logo
+
+侧栏：sideBar
+
+广告：banner
+
+导航：nav
+
+子导航：subNav
+
+菜单：menu
+
+子菜单：subMenu
+
+搜索：search
+
+滚动：scroll
+
+页面主体：main
+
+内容：content
+
+标签页：tab
+
+文章列表：list
+
+提示信息：msg
+
+小技巧：tips
+
+栏目标题：title
+
+加入：joinus
+
+指南：guild
+
+服务：service
+
+热点：hot
+
+新闻：news
+
+下载：download
+
+注册：regsiter
+
+状态：status
+
+按钮：btn
+
+投票：vote
+
+合作伙伴：partner
+
+友情链接：friendLink
+
+页脚：footer
+
+版权：copyRight
+
+1.CSS ID 的命名
+
+外　套：　　wrap
+
+主导航：　　mainNav
+
+子导航：　　subnav
+
+页　脚：　　footer
+
+整个页面：　content
+
+页　眉：　　header
+
+页　脚：　　footer
+
+商　标：　　label
+
+标　题：　　title
+
+主导航：　　mainNav(globalNav)
+
+顶导航：　　topnav
+
+边导航：　　sidebar
+
+左导航：　　leftsideBar
+
+右导航：　　rightsideBar
+
+旗　志：　　logo
+
+标　语：　　banner
+
+菜单内容1： menu1Content
+
+菜单容量：　menuContainer
+
+子菜单：　　submenu
+
+边导航图标：sidebarIcon
+
+注释：　　　note
+
+面包屑：　　breadCrumb(即页面所处位置导航提示)
+
+容器：　　　container
+
+内容：　　　content
+
+搜索：　　　search
+
+登陆：　　　login
+
+功能区：　　shop(如购物车，收银台)
+
+当前的　　　current
+
+2.另外在编辑样式表时可用的注释可这样写：
+
+<– Footer –>
+
+内容区
+
+<– End Footer –>
+
+3.样式文件命名
+
+主要的 master.css
+
+布局，版面 layout.css
+
+专栏 columns.css
+
+文字 font.css
+
+打印样式 print.css
+
+主题 themes.css						</div><!--con-page结束-->
+					</div><!--main-content结束-->
+				</div><!--main-contents结束-->
+			</div><!--main-left结束-->
+			<div class="main-right"></div>
+		</div>
+		<div class="foot">Copyright&copy;hu</div>
+	</div><!--wrap结束-->
+	<script type="text/javascript">
+	window.onload = function(){
+		var art_box = document.getElementById("con-page");
+		var art = art_box.textContent;
+		var art_sp = new Array();
+		art_sp = art.split("。");
+		art_box.innerHTML = "";
+		for(i=0;i<art_sp.length-1;i++){
+			var resultStr = art_sp[i]+"。";
+			var con_page = document.createElement("p");
+			con_page.innerHTML = resultStr;
+			art_box.appendChild(con_page);
+ 		} 
+ 	}	
+	</script>
+</body>
+</html>
